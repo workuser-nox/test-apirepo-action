@@ -15,8 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Run Custom Action for Vulnerability Scan
-      uses: zerothreatai/github-action@0.0.3
+    - name: ZeroThreat AI DAST Scanner
+      uses: zerothreatai/github-action@0.0.4
       with:
         ZT_TOKEN: ${{ secrets.ZT_TOKEN }}
+        ON_PREM_PROXY_API_URL: ${{ secrets.ON_PREM_PROXY_API_URL }}
         WAIT_FOR_ANALYSIS: true
